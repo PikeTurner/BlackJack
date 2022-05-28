@@ -1,11 +1,6 @@
 import zmq
-<<<<<<< HEAD
 import json
 import socket
-=======
-
-
->>>>>>> 2dcac588c3697016993b4b35ab513d6c22c71352
 
 class Giocatore:
     __id = 0
@@ -22,7 +17,6 @@ class Giocatore:
         self.__turno = 0
 
         self.__context = zmq.Context()
-<<<<<<< HEAD
         self.__sc = self.__context.socket(zmq.REQ)
         self.__sc.connect("tcp://localhost:5555")
 
@@ -48,18 +42,6 @@ class Giocatore:
         sc.send_string("connesso alla porta 8000")
         message = sc.recv_string()
         print(message)
-
-
-
-
-=======
-        self.__socket = self.__context.socket(zmq.REQ) 
->>>>>>> 2dcac588c3697016993b4b35ab513d6c22c71352
-    
-
-    def connetti_casino(self):   
-        self.__socket.connect("tcp://localhost:5555")
-
 
     #METODO PER STAMPARE LE SCELTE POSSIBILI
     def scelta(self):
