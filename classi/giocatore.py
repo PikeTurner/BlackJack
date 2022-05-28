@@ -1,3 +1,7 @@
+import zmq
+
+
+
 class Giocatore:
     __id = 0
     __nome = ''
@@ -11,7 +15,15 @@ class Giocatore:
         self.__id = id(self)
         self.__perso = False
         self.__turno = 0
+
+        self.__context = zmq.Context()
+        self.__socket = self.__context.socket(zmq.REQ) 
     
+
+    def connetti_casino(self):   
+        self.__socket.connect("tcp://localhost:5555")
+
+
     #METODO PER STAMPARE LE SCELTE POSSIBILI
     def scelta(self):
         print('1 - Shtatt ferm')
