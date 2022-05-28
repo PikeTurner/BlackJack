@@ -10,9 +10,9 @@ socket.bind("tcp://*:5555")
 
 x = 0
 while x < 3:
-    message = socket.recv_string()
-    #message = json.loads(message)
+    
+    message = json.loads(socket.recv_json())
     print(message)
     if message['azione'] == 'connetti':
-        print('conneso')
+        socket.send_string('8000')
     x += 1

@@ -13,11 +13,11 @@ ctx = {
 }
 
 ctx = json.dumps(ctx)
-sc.send_string('ctx')
-'''
+sc.send_json(ctx)
+
 message = sc.recv_string()
 print(message)
-
+'''
 socket.send_string("porta")
 porta = socket.recv_string()
 '''
