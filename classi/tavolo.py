@@ -1,8 +1,22 @@
-class Tavolo:
+import zmq
+import json
 
+from classi.banco import Banco
+from classi.gioco import Gioco
+
+
+class Tavolo:
     
-    def __init__(self, giocatori):
-        self.__giocatori = giocatori
+    def __init__(self, porta, posti):
+        self.__context = zmq.Context()
+        self.__socket = self.__context.socket(zmq.REP)
+        self.__socket.bind("tcp://*:"+porta)
+
+        self.__id = id(self)
+        self.__posti_totali = posti
+        self.__banco = Banco(52)
+        self.__gioco = Gioco()
+        self.__giocatori = []
         self.__scommesse = {}
         self.__carte_totali = {}
         
