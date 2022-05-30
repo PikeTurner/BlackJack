@@ -14,7 +14,6 @@ class Giocatore:
         self.__soldi = soldi
         self.__id = id(self)
         self.__perso = False
-        self.__turno = 0
 
         self.__context = zmq.Context()
         self.__sc = self.__context.socket(zmq.REQ)
