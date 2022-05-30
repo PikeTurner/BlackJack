@@ -48,11 +48,11 @@ class Tavolo:
                 self.__giocatori[i].set_soldi(self.__giocatori[i].get_soldi() + self.__scommesse[self.__giocatori[i].get_id()]*2)
                 print(self.__giocatori[i].get_nome(),'  vinto')
 
-            elif self.get_somma_carte_giocatore(self.__giocatori[-1]) == 21 and len(carte[self.__giocatori[-1].get_id()]) == 2 and len(carte[self.__giocatori[i].get_id()]) > 2:
+            elif self.get_somma_carte_giocatore(self.__giocatori[-1]) == 21 and len(self.__carte[self.__giocatori[-1].get_id()]) == 2 and len(self.__carte[self.__giocatori[i].get_id()]) > 2:
                 print(self.__giocatori[i].get_nome(),'  perso')
 
             else:
-                self.__giocatori[i].set_soldi(self.__giocatori[i].get_soldi() + scommesse[self.__giocatori[i].get_id()]*2)
+                self.__giocatori[i].set_soldi(self.__giocatori[i].get_soldi() + self.__scommesse[self.__giocatori[i].get_id()]*2)
                 print(self.__giocatori[i].get_nome(),'  vinto')
         
 
