@@ -5,7 +5,8 @@ class Banco():
     __nome = 'Banco'
     __mazzo = None
 
-    def __init__(self,numero_carte):
+    def __init__(self,numero_mazzi):
+        numero_carte = numero_mazzi*13
         self.__mazzo = Mazzo(numero_carte)
         
     #METODO PER L'ESTRAZIONE DELLE CARTE DAL MAZZO

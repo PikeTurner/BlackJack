@@ -5,7 +5,7 @@ from casino import Casino
 
 
 casino = Casino()
-banco = Banco(52)
+banco = Banco(4)
 
 
 casino.ricevi_giocatori()
