@@ -7,8 +7,17 @@ from classi.giocatore import Giocatore
 
 casino = Casino()
 banco = Banco(52)
-cl1 = Giocatore('Paolo', 1000)
+giocatore = Giocatore('Paolo', 1000)
 
+casino.ricevi_giocatori()
+giocatore.connetti_casino()
 
-t = Thread(target=cl1.connetti_tavolo, args=(cl1.connetti_casino(),))
+tavoli = giocatore.ricevi_lita_tavoli()
+
+for t in tavoli:
+    print(t)
+
+'''
+t = Thread(target=giocatore.connetti_tavolo, args=(giocatore.connetti_casino(),))
 t.start()
+'''

@@ -2,6 +2,8 @@ import zmq
 import json
 import socket
 
+from classi.casino import Casino
+
 class Giocatore:
     __id = 0
     __nome = ''
@@ -21,19 +23,17 @@ class Giocatore:
 
 
     def connetti_casino(self):
-        ctx = {
-            'azione': 'connetti',
-            'mess': socket.gethostbyname(socket.gethostname()),
-        }
+        self.__sc.send_pyobj(self)
 
-        ctx = json.dumps(ctx)
-        self.__sc.send_json(ctx)
-        porta_tavolo = self.__sc.recv_string()
 
-        return porta_tavolo
+    def ricevi_lita_tavoli(self):
+        self.__sc.send_string('tavoli')
+        tavoli =json.loads(self.__sc.recv_json())
 
+        return tavoli
 
     def connetti_tavolo(porta_tavolo):
+
         context = zmq.Context()
         sc = context.socket(zmq.REQ)
         sc.connect("tcp://localhost:" + porta_tavolo)

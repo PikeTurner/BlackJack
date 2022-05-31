@@ -12,6 +12,7 @@ class Tavolo:
         self.__socket = self.__context.socket(zmq.REP)
         self.__socket.bind("tcp://*:"+porta)
 
+        self.__porta = porta
         self.__id = id(self)
         self.__posti_totali = posti
         self.__banco = Banco(52)

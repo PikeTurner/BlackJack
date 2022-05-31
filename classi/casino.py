@@ -20,11 +20,16 @@ class Casino:
 
 
     def ricevi_giocatori(self):
-        giocatore = self.__socket.recv_object()
+        giocatore = self.__socket.recv_pyobj()
         self.__giocatori.append(giocatore)
+        print('Giocatore ricevuto')
+
 
     def manda_tavoli(self):
-        self.__socket.send_json(json.dumps(self.__tavoli))
+        comando = self.__socket.recv_string()
+        if comando == 'tavoli':
+            self.__socket.send_json(json.dumps(self.__tavoli))
+            print('Giocatore mandato al tavolo')
 
 
 
