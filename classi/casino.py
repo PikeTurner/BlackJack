@@ -1,3 +1,4 @@
+from socket import socket
 import zmq
 import json
 
@@ -22,6 +23,7 @@ class Casino:
     def ricevi_giocatori(self):
         giocatore_id = self.__socket.recv_string()
         self.__giocatori.append(giocatore_id)
+        self.__socket.send_string("Ammesso alla lista")
         print('Giocatore ricevuto')
 
 
