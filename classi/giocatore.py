@@ -22,7 +22,7 @@ class Giocatore:
 
 
     def connetti_casino(self):
-        self.__sc.send_pyobj(self)
+        self.__sc.send_string(str(self.__id))
 
 
     def ricevi_lita_tavoli(self):

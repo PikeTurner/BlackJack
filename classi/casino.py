@@ -20,8 +20,8 @@ class Casino:
 
 
     def ricevi_giocatori(self):
-        giocatore = self.__socket.recv_pyobj()
-        self.__giocatori.append(giocatore)
+        giocatore_id = self.__socket.recv_string()
+        self.__giocatori.append(giocatore_id)
         print('Giocatore ricevuto')
 
 
