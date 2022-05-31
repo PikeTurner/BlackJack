@@ -1,7 +1,7 @@
 import zmq
 import json
 
-from classi.tavolo import Tavolo
+from tavolo import Tavolo
 
 
 class Casino:
@@ -11,7 +11,7 @@ class Casino:
     def __init__(self) -> None:
         for i in range(5):
             porta = 8000+i
-            self.__tavoli.append(Tavolo(str(porta, 6)))
+            self.__tavoli.append(Tavolo(str(porta), 6))
 
         self.__context = zmq.Context()
         self.__socket = self.__context.socket(zmq.REP)

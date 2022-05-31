@@ -1,8 +1,8 @@
 import zmq
 import json
 
-from classi.banco import Banco
-from classi.gioco import Gioco
+from banco import Banco
+from gioco import Gioco
 
 
 class Tavolo:

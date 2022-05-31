@@ -2,7 +2,6 @@ import zmq
 import json
 import socket
 
-from classi.casino import Casino
 
 class Giocatore:
     __id = 0

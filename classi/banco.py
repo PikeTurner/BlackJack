@@ -1,5 +1,4 @@
-from classi.carte import Mazzo
-from classi.giocatore import Giocatore
+from carte import Mazzo
 
 class Banco():
 
@@ -7,7 +6,6 @@ class Banco():
     __mazzo = None
 
     def __init__(self,numero_carte):
-        super().__init__('Banco', 1)
         self.__mazzo = Mazzo(numero_carte)
         
     #METODO PER L'ESTRAZIONE DELLE CARTE DAL MAZZO
