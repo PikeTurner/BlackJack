@@ -23,7 +23,8 @@ class Giocatore:
 
     def connetti_casino(self):
         self.__sc.send_string(str(self.__id))
-
+        message = self.__sc.recv_string()
+        print(message)
 
     def ricevi_lita_tavoli(self):
         self.__sc.send_string('tavoli')
