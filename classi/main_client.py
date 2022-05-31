@@ -14,6 +14,7 @@ tavoli = giocatore.ricevi_lita_tavoli()
 
 for t in tavoli:
     print(t)
+    
 '''
 t = Thread(target=giocatore.connetti_tavolo, args=(giocatore.connetti_casino(),))
 t.start()
