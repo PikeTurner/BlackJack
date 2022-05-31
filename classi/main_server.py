@@ -9,3 +9,4 @@ banco = Banco(52)
 
 
 casino.ricevi_giocatori()
+casino.manda_tavoli()
