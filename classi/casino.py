@@ -30,7 +30,7 @@ class Casino:
     def manda_tavoli(self):
         comando = self.__socket.recv_string()
         if comando == 'tavoli':
-            self.__socket.send_json(json.dumps(self.__tavoli))
+            self.__socket.send_json(json.dumps(self.__tavoli.__dict__()))
             print('Giocatore mandato al tavolo')
 
 
