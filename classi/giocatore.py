@@ -18,7 +18,7 @@ class Giocatore:
 
         self.__context = zmq.Context()
         self.__sc = self.__context.socket(zmq.REQ)
-        self.__sc.connect("tcp://localhost:5555")
+        self.__sc.connect("tcp://192.168.200.76:5555")
 
 
     def connetti_casino(self):
